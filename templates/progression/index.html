@@ -5,40 +5,71 @@
 <div class="sticky-container">
     {% include 'partials/_navbar.html' %}
 </div> 
-    <div class="px-4 py-5 mt-5 text-center">
-        <h1 class="display-5 fw-bold mb-2">Experience Level 1</h1>
-        <br>
-        <div class="d-block ms-4 me-4">
-            <!-- PROGRESS BAR -->
-            <div class="progress">
-                <div class="progress-bar bg-dark" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-            <h3 class="card-text mt-2 ms-1" style="text-align: left;"><span style="font-weight: lighter">My progress :</span> 0 of 1000 points</h3>
+<div class="px-4 py-5 mt-5 mb-2 text-center">
+    <h1 class="display-5 fw-bold mb-2">Experience Level 1</h1>
+    <br>
+    <div class="d-block ms-4 me-4">
+        <!-- PROGRESS BAR -->
+        <div class="progress">
+            <div class="progress-bar bg-dark" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
         </div>
-        <br>
-
+        <h3 class="card-text mt-2 ms-1 mb-3" style="text-align: left;">My progress :<span style="font-weight: bold"> 0 of 1000 points</span></h3>
+    </div>
+    <br>
+    
+    <!-- CONTAINER -->
+    <div class="d-flex">
         <div class="col-lg-6 mx-auto">
-            <div class="card mt-4 mb-1 ms-3 me-3 border border-dark border-1" style="width: auto;">
+            <div class="card mx-auto border border-dark border-1 shadow p-3 mb-5 bg-body rounded" style="border-radius: 0;">
                 <div class="card-body">
-                    <h4 class="lead mb-3 fs-4 ms-2" style="text-align: left;">My recent activities</h4>
+                    <h4 class="lead mb-3 fs-4" style="text-align: left; font-weight: bold; margin-top:-15px; margin-left:-10px;">My recent activities</h4>
                     <h5 class="card-text">Quickie 05.40 PM - 16th December 2014</h5>
                 </div>
             </div>
         <!-- Form Activity -->
-        <div class="d-flex mt-5">
+        <div class="d-grid p-1">
             <br>
-            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Activity" required>
+                <p class="text-muted fs-4">add new activity</p>
+                <input type="email" class="form-control activityadd" id="exampleFormControlInput1" placeholder="activity details" required>
             <br>
         </div>
 
         <!-- Quick XP -->
-        <div class="d-grid mt-3 gap-2 d-sm-flex justify-content-sm-center" id="button-group">
-            <button id="manuk" type="button" class="btn btn-outline-dark btn-lg px-5 m-1">25 points</button>
-            <button type="button" class="btn btn-outline-dark  btn-lg px-5 m-1">50 points</button>
-            <button type="button" class="btn btn-outline-dark btn-lg px-5 m-1">75 points</button>
-            <button type="button" class="btn btn-outline-dark  btn-lg px-5 m-1">100 points</button>
-        </div>
-
-        </div>
+        <div class="d-sm-flex mt-3 justify-content-md-between d-grid justify-content-sm-center" id="button-group">
+            <button type="button" class="btn btn-dark btn-lg px-5 m-1 xpadd">25 points</button>
+            <button type="button" class="btn btn-dark btn-lg px-5 m-1 xpadd">50 points</button>
+            <button type="button" class="btn btn-dark btn-lg px-5 m-1 xpadd">75 points</button>
+            <button type="button" class="btn btn-dark btn-lg px-5 m-1 xpadd">100 points</button>
+        </div>    
     </div>
+</div>
+
+<div class="container-fluid overflow-auto mt-5 border border-dark border-1">
+    <div class="app-table mt-2">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Tanggal</th>
+                    <th>Kategori</th>
+                    <th>Deskripsi</th>
+                    <th>Harga</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="align-middle">
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="align-middle">
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
 {% endblock content %}

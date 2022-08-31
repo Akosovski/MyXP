@@ -23,14 +23,14 @@
             <div class="card mx-auto border border-dark border-1 shadow p-3 mb-5 bg-body rounded" style="border-radius: 0;">
                 <div class="card-body">
                     <h4 class="lead mb-3 fs-4" style="text-align: left; font-weight: bold; margin-top:-15px; margin-left:-10px;">My recent activities</h4>
-                    <h5 class="card-text">Quickie 05.40 PM - 16th December 2014</h5>
+                    <h5 class="card-text">Quickie - 05.40 PM - 16th December 2014</h5>
                 </div>
             </div>
         <!-- Form Activity -->
         <div class="d-grid p-1">
             <br>
-                <p class="text-muted fs-4">add new activity</p>
-                <input type="email" class="form-control activityadd" id="exampleFormControlInput1" placeholder="activity details" required>
+                <p class="text-muted fs-3">New activities?</p>
+                <input type="email" class="form-control activityadd" id="exampleFormControlInput1" placeholder="add new activity..." required>
             <br>
         </div>
 
@@ -40,7 +40,9 @@
             <button type="button" class="btn btn-dark btn-lg px-5 m-1 xpadd">50 points</button>
             <button type="button" class="btn btn-dark btn-lg px-5 m-1 xpadd">75 points</button>
             <button type="button" class="btn btn-dark btn-lg px-5 m-1 xpadd">100 points</button>
-        </div>    
+        </div>
+
+        <button type="button" class="btn btn-success btn-lg px-5 m-1 mt-4 w-auto xpadd">Submit</button>
     </div>
 </div>
 
@@ -49,10 +51,10 @@
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <th>Tanggal</th>
-                    <th>Kategori</th>
-                    <th>Deskripsi</th>
-                    <th>Harga</th>
+                    <th>Activity</th>
+                    <th>Experience</th>
+                    <th>Summary</th>
+                    <th>Date</th>
                 </tr>
             </thead>
             <tbody>
@@ -72,4 +74,8 @@
         </table>
     </div>
 </div>
+
+<footer>
+    
+</footer>
 {% endblock content %}

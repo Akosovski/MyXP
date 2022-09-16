@@ -48,3 +48,6 @@ def add_activity(request):
         messages.success(request, 'Successfully added activity!')
         
         return redirect('progression')
+
+def close_modal(request):
+    return redirect('progression')

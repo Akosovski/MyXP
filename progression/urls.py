@@ -9,4 +9,5 @@ urlpatterns = [
     path('', views.index, name="progression"),
     path('authentication/', include('authentication.urls')),
     path('add-activity', views.add_activity, name="add-activity"),
+    path('close-modal', views.close_modal, name="close-modal"),
 ]

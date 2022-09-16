@@ -18,48 +18,48 @@
     <br>
     
     <form name="tambah-pembukuan" action="{% url 'add-activity' %}" method="POST">
-    {% csrf_token %}
-    <!-- CONTAINER -->
-    <div class="d-flex">
-        <div class="col-lg-6 mx-auto">
-            <div class="card mx-auto border border-dark border-1 shadow p-3 mb-5 bg-body rounded" style="border-radius: 0;">
-                <div class="card-body">
-                    <h4 class="lead mb-3 fs-4" style="text-align: left; font-weight: bold; margin-top:-15px; margin-left:-10px;">My recent activities</h4>
-                    <h5 class="card-text">Quickie - 05.40 PM - 16th December 2014 (Dummy)</h5>
+        {% csrf_token %}
+        <!-- CONTAINER -->
+        <div class="d-flex">
+            <div class="col-lg-6 mx-auto">
+                <div class="card mx-auto border border-dark border-1 shadow p-3 mb-5 bg-body rounded" style="border-radius: 0;">
+                    <div class="card-body">
+                        <h4 class="lead mb-3 fs-4" style="text-align: left; font-weight: bold; margin-top:-15px; margin-left:-10px;">My recent activities</h4>
+                        <h5 class="card-text">Quickie - 05.40 PM - 16th December 2014 (Dummy)</h5>
+                    </div>
                 </div>
+
+            <!-- Form Activity -->
+            <div class="d-grid p-1">
+                <br>
+                    <p class="text-muted fs-3">Add a New One!</p>
+                    <input type="text" class="form-control activityadd" name="name" value="{{values.activity_name}}" id="namefield" placeholder="Activity?" required>
+                    <input type="number" class="form-control activityadd mt-4" name="xp" value="{{values.activity_xp}}" id="pointsfield" placeholder="Points?" required>
             </div>
 
-        <!-- Form Activity -->
-        <div class="d-grid p-1">
-            <br>
-                <p class="text-muted fs-3">Add a New One!</p>
-                <input type="text" class="form-control activityadd" name="name" value="{{values.activity_name}}" id="namefield" placeholder="Activity?" required>
-                <input type="number" class="form-control activityadd mt-4" name="xp" value="{{values.activity_xp}}" id="pointsfield" placeholder="Points?" required>
-        </div>
+            <!-- Quick XP -->
+            <div class="d-sm-flex mt-3 justify-content-md-between d-grid justify-content-sm-center" id="button-group">
+                <button type="button" class="btn btn-dark btn-lg px-5 m-1 xpadd">25 points</button>
+                <button type="button" class="btn btn-dark btn-lg px-5 m-1 xpadd">50 points</button>
+                <button type="button" class="btn btn-dark btn-lg px-5 m-1 xpadd">75 points</button>
+                <button type="button" class="btn btn-dark btn-lg px-5 m-1 xpadd">100 points</button>
+            </div>
 
-        <!-- Quick XP -->
-        <div class="d-sm-flex mt-3 justify-content-md-between d-grid justify-content-sm-center" id="button-group">
-            <button type="button" class="btn btn-dark btn-lg px-5 m-1 xpadd">25 points</button>
-            <button type="button" class="btn btn-dark btn-lg px-5 m-1 xpadd">50 points</button>
-            <button type="button" class="btn btn-dark btn-lg px-5 m-1 xpadd">75 points</button>
-            <button type="button" class="btn btn-dark btn-lg px-5 m-1 xpadd">100 points</button>
-        </div>
+            <!-- Summary & Dates -->
+            <div class="d-grid p-1">
+                <br>
+                    <input type="text" class="form-control activityadd" name="summary" value="{{values.activity_summary}}" id="summaryfield" placeholder="Summary?" required>
+                    <input type="date" class="form-control activityadd mt-4" name="date" value="{{values.activity_date}}" id="datefield" placeholder="Date?" required>
+                <br>
+                <button type="submit" class="btn btn-dark btn-lg px-5 w-100 xpadd">Right Now</button>
+            </div>
 
-        <!-- Summary & Dates -->
-        <div class="d-grid p-1">
-            <br>
-                <input type="text" class="form-control activityadd" name="summary" value="{{values.activity_summary}}" id="summaryfield" placeholder="Summary?" required>
-                <input type="date" class="form-control activityadd mt-4" name="date" value="{{values.activity_date}}" id="datefield" placeholder="Date?" required>
-            <br>
-            <button type="submit" class="btn btn-dark btn-lg px-5 w-100 xpadd">Right Now</button>
+            <input type="submit" value="Submit" class="btn btn-success btn-lg px-5 m-1 mt-4 w-auto xpadd">
         </div>
-
-        <input type="submit" value="Submit" class="btn btn-success btn-lg px-5 m-1 mt-4 w-auto xpadd">
-    </div>
     </form>
 </div>
 
-<div class="container-fluid overflow-auto mt-5 border border-dark border-1">
+<div class="container-fluid mt-5 border border-dark border-1">
     <div class="app-table mt-2">
         <table class="table table-striped">
             <thead>
@@ -70,47 +70,46 @@
                     <th>Date</th>
                 </tr>
             </thead>
+            {% if activities.count %}
             <tbody>
-                {% if activities.count %}
-                    {% for activity in page_obj %}
-                        <tr class="align-middle">
-                            <td>{{activity.activity_name}}</td>
-                            <td>{{activity.activity_xp}}</td>
-                            <td>{{activity.activity_summary}}</td>
-                            <td>{{activity.activity_date}}</td>
-                        </tr>
-                    {% endfor %}
-                {% else %}
+                {% for activity in page_obj %}
                     <tr class="align-middle">
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>{{activity.activity_name}}</td>
+                        <td>{{activity.activity_xp}}</td>
+                        <td>{{activity.activity_summary}}</td>
+                        <td>{{activity.activity_date}}</td>
                     </tr>
-                {% endif %}
-            </tbody>
+                {% endfor %}
+            {% else %}
+                <tr class="align-middle">
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody> 
+            {% endif %}
         </table>
     </div>
 
     <div class="container d-flex justify-content-end mb-0" id="pagination-container">
         <div class="mt-2 m-3">
-            Section {{page_obj.number}} of {{ page_obj.paginator.num_pages }}
+            Page {{page_obj.number}} of {{ page_obj.paginator.num_pages }}
         </div>
         <div class="">     
             <ul class="pagination">
                 {% if page_obj.has_previous %}
-                <li {% if page_obj.number == 1 %} class="page-item active" {% endif %}><a class="page-link" href="?page=1">&laquo; 1</a></li>
-                <li class="page-item"> <a class="page-link" href="?page={{ page_obj.previous_page_number }}">Back</a></li>
+                <li {% if page_obj.number == 1 %} class="page-item active" {% endif %}><a class="page-link text-dark" href="?page=1">&laquo; 1</a></li>
+                <li class="page-item"> <a class="page-link text-dark" href="?page={{ page_obj.previous_page_number }}">Back</a></li>
                 {% endif %}
         
                 {% if page_obj.has_next %}
-                <li class="page-item"> <a class="page-link" href="?page={{ page_obj.next_page_number }}">Next</a></li>
-                <li class="page-item"> <a class="page-link" href="?page={{ page_obj.paginator.num_pages }}">{{ page_obj.paginator.num_pages}} &raquo;</a></li>
+                <li class="page-item"> <a class="page-link text-dark" href="?page={{ page_obj.next_page_number }}">Next</a></li>
+                <li class="page-item"> <a class="page-link text-dark" href="?page={{ page_obj.paginator.num_pages }}">{{ page_obj.paginator.num_pages}} &raquo;</a></li>
                 {% endif %}
             </ul>           
         </div>
     </div>
-
 </div>
 
 <div class="sticky-container">

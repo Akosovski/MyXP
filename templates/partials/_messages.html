@@ -1,9 +1,32 @@
 {% if messages %}
-<div class="messages mt-4 mb-0">
-    {% for message in messages %}
-    <div {% if message.tags %} class="alert alert-sm alert-{{ message.tags }}" {% endif %}>
-        {{ message }}
+<div class="modal modal-tour d-block py-5 bg-light" tabindex="-1" role="dialog" id="modalTour" style="z-index:999; position: fixed;">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content rounded-4 shadow" style="margin-top: 25vh;">
+        <div class="modal-header border-bottom-0">
+          <h5 class="modal-title fw-semibold">Notification</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="xbutton" onclick="xButton()"></button>
+        </div>
+        <div class="modal-body py-0">
+        {% for message in messages %}
+          <p {% if message.tags %} class="fs-4 text-center text-{{ message.tags }}"{% endif %}>{{ message }}</p>
+        {% endfor %}
+        </div>
+        <div class="modal-footer flex-column border-top-0">
+          <button type="button" class="btn btn-lg btn-dark w-100 mx-0" data-bs-dismiss="modal" id="donebutton" onclick="doneButton()">Done</button>
+        </div>
+      </div>
     </div>
-    {% endfor %}
 </div>
+
+<script>
+    let modal = document.getElementById('modalTour');
+    function doneButton() {
+        modal.style.display = 'none';
+    }
+
+    function xButton() {
+        modal.style.display = 'none';
+    }
+</script>
 {% endif %}
+

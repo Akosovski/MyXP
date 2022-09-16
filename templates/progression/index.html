@@ -5,6 +5,7 @@
 <div class="sticky-container">
     {% include 'partials/_navbar.html' %}
 </div> 
+{% include 'partials/_messages.html' %}
 <div class="px-4 py-5 mt-5 mb-2 text-center">
     <h1 class="display-5 fw-bold mb-2">Experience Level 1</h1>
     <br>
@@ -33,33 +34,33 @@
             <div class="d-grid p-1">
                 <br>
                     <p class="text-muted fs-3">Add a New One!</p>
-                    <input type="text" class="form-control activityadd" name="name" value="{{values.activity_name}}" id="namefield" placeholder="Activity?" required>
-                    <input type="number" class="form-control activityadd mt-4" name="xp" value="{{values.activity_xp}}" id="pointsfield" placeholder="Points?" required>
+                    <input type="text" class="form-control activityadd rounded" name="name" value="{{values.activity_name}}" id="namefield" placeholder="Activity?" required>
+                    <input type="number" class="form-control activityadd mt-4 rounded" name="xp" value="{{values.activity_xp}}" id="pointsfield" placeholder="Points?" required>
             </div>
 
             <!-- Quick XP -->
             <div class="d-sm-flex mt-3 justify-content-md-between d-grid justify-content-sm-center" id="button-group">
-                <button type="button" class="btn btn-dark btn-lg px-5 m-1 xpadd">25 points</button>
-                <button type="button" class="btn btn-dark btn-lg px-5 m-1 xpadd">50 points</button>
-                <button type="button" class="btn btn-dark btn-lg px-5 m-1 xpadd">75 points</button>
-                <button type="button" class="btn btn-dark btn-lg px-5 m-1 xpadd">100 points</button>
+                <button type="button" class="btn btn-dark btn-lg px-5 m-1 xpadd rounded">25 points</button>
+                <button type="button" class="btn btn-dark btn-lg px-5 m-1 xpadd rounded">50 points</button>
+                <button type="button" class="btn btn-dark btn-lg px-5 m-1 xpadd rounded">75 points</button>
+                <button type="button" class="btn btn-dark btn-lg px-5 m-1 xpadd rounded">100 points</button>
             </div>
 
             <!-- Summary & Dates -->
             <div class="d-grid p-1">
                 <br>
-                    <input type="text" class="form-control activityadd" name="summary" value="{{values.activity_summary}}" id="summaryfield" placeholder="Summary?" required>
-                    <input type="date" class="form-control activityadd mt-4" name="date" value="{{values.activity_date}}" id="datefield" placeholder="Date?" required>
+                    <input type="text" class="form-control activityadd rounded" name="summary" value="{{values.activity_summary}}" id="summaryfield" placeholder="Summary?" required>
+                    <input type="date" class="form-control activityadd mt-4 rounded" name="date" value="{{values.activity_date}}" id="datefield" placeholder="Date?" required>
                 <br>
-                <button type="submit" class="btn btn-dark btn-lg px-5 w-100 xpadd">Right Now</button>
+                <button type="button" class="btn btn-dark btn-lg px-5 w-100 xpadd rounded">Right Now</button>
             </div>
 
-            <input type="submit" value="Submit" class="btn btn-success btn-lg px-5 m-1 mt-4 w-auto xpadd">
+            <input type="submit" value="Submit" class="btn btn-success btn-lg px-5 m-1 mt-4 w-auto xpadd rounded">
         </div>
     </form>
 </div>
 
-<div class="container-fluid mt-5 border border-dark border-1">
+<div class="container-fluid mt-5 border border-dark border-1 rounded">
     <div class="app-table mt-2">
         <table class="table table-striped">
             <thead>

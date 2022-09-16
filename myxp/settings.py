@@ -60,6 +60,8 @@ TEMPLATES = [
     },
 ]
 
+# AUTH_USER_MODEL = 'authentication.Account'
+
 WSGI_APPLICATION = 'myxp.wsgi.application'
 
 

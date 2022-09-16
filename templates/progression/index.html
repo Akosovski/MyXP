@@ -23,15 +23,16 @@
             <div class="card mx-auto border border-dark border-1 shadow p-3 mb-5 bg-body rounded" style="border-radius: 0;">
                 <div class="card-body">
                     <h4 class="lead mb-3 fs-4" style="text-align: left; font-weight: bold; margin-top:-15px; margin-left:-10px;">My recent activities</h4>
-                    <h5 class="card-text">Quickie - 05.40 PM - 16th December 2014</h5>
+                    <h5 class="card-text">Quickie - 05.40 PM - 16th December 2014 (Dummy)</h5>
                 </div>
             </div>
+
         <!-- Form Activity -->
         <div class="d-grid p-1">
             <br>
-                <p class="text-muted fs-3">New activities?</p>
-                <input type="email" class="form-control activityadd" id="exampleFormControlInput1" placeholder="add new activity..." required>
-            <br>
+                <p class="text-muted fs-3">Add a New One!</p>
+                <input type="text" class="form-control activityadd" id="exampleFormControlInput1" placeholder="Activity?" required>
+                <input type="number" class="form-control activityadd mt-4" id="exampleFormControlInput2" placeholder="Points?" required>
         </div>
 
         <!-- Quick XP -->
@@ -40,6 +41,15 @@
             <button type="button" class="btn btn-dark btn-lg px-5 m-1 xpadd">50 points</button>
             <button type="button" class="btn btn-dark btn-lg px-5 m-1 xpadd">75 points</button>
             <button type="button" class="btn btn-dark btn-lg px-5 m-1 xpadd">100 points</button>
+        </div>
+
+        <!-- Summary & Dates -->
+        <div class="d-grid p-1">
+            <br>
+                <input type="text" class="form-control activityadd" id="exampleFormControlInput3" placeholder="Summary?" required>
+                <input type="date" class="form-control activityadd mt-4" id="exampleFormControlInput4" placeholder="Date?" required>
+            <br>
+            <button type="button" class="btn btn-dark btn-lg px-5 w-100 xpadd">Right Now</button>
         </div>
 
         <button type="button" class="btn btn-success btn-lg px-5 m-1 mt-4 w-auto xpadd">Submit</button>

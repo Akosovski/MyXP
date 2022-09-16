@@ -19,9 +19,10 @@ def index(request):
     page_number = request.GET.get('page')
     page_obj = Paginator.get_page(paginator, page_number)
     context = {
+        'activities': activities,
         'page_obj': page_obj,
     }
-    return render(request, 'progression/index.html')
+    return render(request, 'progression/index.html', context)
 
 @login_required(login_url = '/authentication/login')
 def add_activity(request):
@@ -50,4 +51,4 @@ def add_activity(request):
         
         Activity.objects.create(owner=request.user, activity_name=activity_name, activity_xp=activity_xp, activity_summary=activity_summary, activity_date=activity_date)
         messages.success(request, 'Successfully added activity!')
-        return render(request, 'progression/index.html')
+        return render(request, 'progression/index.html', context)

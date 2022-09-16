@@ -8,4 +8,9 @@ class Activity(models.Model):
     activity_xp = models.IntegerField()
     activity_date = models.DateField(default=now)
     activity_summary = models.TextField()
+    updated_at = models.DateTimeField(auto_now=True)
     owner = models.ForeignKey(to=User, on_delete=models.CASCADE)
+
+    class Meta: 
+        verbose_name = "Activity"
+        verbose_name_plural = "Activities"

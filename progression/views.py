@@ -22,7 +22,7 @@ def index(request):
     if total_xp < 1000:
         shown_xp = total_xp
     else:
-        shown_xp = abs(total_xp - 1000)
+        shown_xp = total_xp % 1000
 
     xp_level = total_xp / 1000
     bar_width = shown_xp / 10

@@ -17,11 +17,11 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link active fs-5" aria-current="page" href="#">Dashboard</a>
+            <a class="nav-link active fs-5" aria-current="page" href="{% url 'progression' %}">Dashboard</a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link active fs-5" aria-current="page" href="#">Activities</a>
+            <a class="nav-link active fs-5" aria-current="page" href="{% url 'activity-list' %}">Activities</a>
           </li>
 
           <form action="{% url 'logout' %}" method="POST">

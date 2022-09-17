@@ -11,9 +11,6 @@ from django.template.loader import render_to_string
 @login_required(login_url = '/authentication/login')
 def index(request):
     activities = Activity.objects.all()
-    paginator = Paginator(activities, 10)
-    page_number = request.GET.get('page')
-    page_obj = Paginator.get_page(paginator, page_number)
 
     total_xp = 0
     for activity in activities:
@@ -31,7 +28,6 @@ def index(request):
 
     context = {
         'activities': activities,
-        'page_obj': page_obj,
         'shown_xp': shown_xp,
         'int_level': int_level,
         'bar_width': bar_width,
@@ -69,3 +65,16 @@ def add_activity(request):
 
 def close_modal(request):
     return redirect('progression')
+
+@login_required(login_url = '/authentication/login')
+def activity_list(request):
+    activities = Activity.objects.all()
+    paginator = Paginator(activities, 10)
+    page_number = request.GET.get('page')
+    page_obj = Paginator.get_page(paginator, page_number)
+
+    context = {
+        'activities': activities,
+        'page_obj': page_obj,
+    }
+    return render(request, 'progression/activity_list.html', context)

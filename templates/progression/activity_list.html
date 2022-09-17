@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="sticky-container">
+    {% include 'partials/_navbar.html' %}
+</div> 
+
+<div class="container-fluid mt-5 border border-dark border-1 rounded">
+    <div class="app-table mt-2">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Activity</th>
+                    <th>XP Points</th>
+                    <th>Summary</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            {% if activities.count %}
+            <tbody>
+                {% for activity in page_obj %}
+                    <tr class="align-middle">
+                        <td>{{activity.activity_name}}</td>
+                        <td>{{activity.activity_xp}}</td>
+                        <td>{{activity.activity_summary}}</td>
+                        <td>{{activity.activity_date}}</td>
+                    </tr>
+                {% endfor %}
+            {% else %}
+                <tr class="align-middle">
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody> 
+            {% endif %}
+        </table>
+    </div>
+
+    <div class="container d-flex justify-content-end mb-0" id="pagination-container">
+        <div class="mt-2 m-3">
+            Page {{page_obj.number}} of {{ page_obj.paginator.num_pages }}
+        </div>
+        <div class="">     
+            <ul class="pagination">
+                {% if page_obj.has_previous %}
+                <li {% if page_obj.number == 1 %} class="page-item active" {% endif %}><a class="page-link text-dark" href="?page=1">&laquo; 1</a></li>
+                <li class="page-item"> <a class="page-link text-dark" href="?page={{ page_obj.previous_page_number }}">Back</a></li>
+                {% endif %}
+        
+                {% if page_obj.has_next %}
+                <li class="page-item"> <a class="page-link text-dark" href="?page={{ page_obj.next_page_number }}">Next</a></li>
+                <li class="page-item"> <a class="page-link text-dark" href="?page={{ page_obj.paginator.num_pages }}">{{ page_obj.paginator.num_pages}} &raquo;</a></li>
+                {% endif %}
+            </ul>           
+        </div>
+    </div>
+</div>
+
+<div class="sticky-container">
+    {% include 'partials/_footer.html' %}
+</div> 
+{% endblock content %}

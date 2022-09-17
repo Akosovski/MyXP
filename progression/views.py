@@ -14,9 +14,27 @@ def index(request):
     paginator = Paginator(activities, 10)
     page_number = request.GET.get('page')
     page_obj = Paginator.get_page(paginator, page_number)
+
+    total_xp = 0
+    for activity in activities:
+        total_xp += activity.activity_xp
+    
+    if total_xp < 1000:
+        shown_xp = total_xp
+    else:
+        shown_xp = abs(total_xp - 1000)
+
+    xp_level = total_xp / 1000
+    bar_width = shown_xp / 10
+
+    int_level = int(xp_level)
+
     context = {
         'activities': activities,
         'page_obj': page_obj,
+        'shown_xp': shown_xp,
+        'int_level': int_level,
+        'bar_width': bar_width,
     }
     return render(request, 'progression/index.html', context)
 

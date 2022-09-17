@@ -7,14 +7,14 @@
 </div> 
 {% include 'partials/_messages.html' %}
 <div class="px-4 py-5 mt-5 mb-2 text-center">
-    <h1 class="display-5 fw-bold mb-2">Experience Level 1</h1>
+    <h1 class="display-5 fw-bold mb-2">Experience Level {{int_level}}</h1>
     <br>
     <div class="d-block ms-4 me-4">
         <!-- PROGRESS BAR -->
-        <div class="progress">
-            <div class="progress-bar bg-dark" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+        <div class="progress">                                          <!-- Bar width is fine -->
+            <div class="progress-bar bg-dark" role="progressbar" style="width: {{bar_width}}%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="1000"></div>
         </div>
-        <h3 class="card-text mt-2 ms-1 mb-3" style="text-align: left;">My progress :<span style="font-weight: bold"> 0 of 1000 points</span></h3>
+        <h3 class="card-text mt-2 ms-1 mb-3" style="text-align: left;">Points : <span class="text-success" style="font-weight: bold">{{shown_xp}}</span> <span style="font-weight: bold">out of 1000</span></h3>
     </div>
     <br>
     
@@ -33,7 +33,7 @@
             <!-- Form Activity -->
             <div class="d-grid p-1">
                 <br>
-                    <p class="text-muted fs-3">Add a New One!</p>
+                    <p class="text-dark fs-3" style="font-weight: bold">Add a New One!</p>
                     <input type="text" class="form-control activityadd rounded" name="name" value="{{values.activity_name}}" id="namefield" placeholder="Activity?" required>
                     <input type="number" class="form-control activityadd mt-4 rounded" name="xp" value="{{values.activity_xp}}" id="pointsfield" placeholder="Points?" required>
             </div>

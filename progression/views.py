@@ -69,7 +69,7 @@ def close_modal(request):
 @login_required(login_url = '/authentication/login')
 def activity_list(request):
     activities = Activity.objects.all()
-    paginator = Paginator(activities, 10)
+    paginator = Paginator(activities, 15)
     page_number = request.GET.get('page')
     page_obj = Paginator.get_page(paginator, page_number)
 

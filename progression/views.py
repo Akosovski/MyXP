@@ -78,3 +78,7 @@ def activity_list(request):
         'page_obj': page_obj,
     }
     return render(request, 'progression/activity_list.html', context)
+
+@login_required(login_url = '/authentication/login')
+def profile(request):
+    return render(request, 'progression/profile.html')

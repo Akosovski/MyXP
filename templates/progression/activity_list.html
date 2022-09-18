@@ -6,16 +6,15 @@
     {% include 'partials/_navbar.html' %}
 </div> 
 
-<div class="row p-5 ps-0 pe-0 m-0">
+<div class="row pt-5 ps-0 pe-0 m-0">
     <h5 class="mt-5" style="text-align: center; font-weight: bold">Activity List</h5>
-    <div class="container mt-1 border border-dark border-1 border-end-0 border-start-0">
-        <div class="app-table mt-2 overflow-auto">
+    <div class="container-fluid overflow-auto mt-1 border border-dark border-1 border-end-0 border-start-0">
+        <div class="app-table mt-2">
             <table class="table table-striped">
                 <thead>
                     <tr>
                         <th>Activity</th>
                         <th>Points</th>
-                        <th>Summary</th>
                         <th>Date</th>
                     </tr>
                 </thead>
@@ -25,13 +24,86 @@
                         <tr class="align-middle">
                             <td>{{activity.activity_name}}</td>
                             <td>{{activity.activity_xp}}</td>
-                            <td>{{activity.activity_summary}}</td>
                             <td>{{activity.activity_date}}</td>
                         </tr>
                     {% endfor %}
                 {% else %}
                     <tr class="align-middle">
                         <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="align-middle">
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="align-middle">
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="align-middle">
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="align-middle">
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="align-middle">
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="align-middle">
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="align-middle">
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="align-middle">
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="align-middle">
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="align-middle">
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="align-middle">
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="align-middle">
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="align-middle">
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="align-middle">
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="align-middle">
                         <td></td>
                         <td></td>
                         <td></td>
@@ -66,4 +138,5 @@
 <div class="sticky-container">
     {% include 'partials/_footer.html' %}
 </div> 
+<br>
 {% endblock content %}

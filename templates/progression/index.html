@@ -25,10 +25,10 @@
             <div class="col-lg-6 mx-auto">
                 <div class="card mx-auto border border-dark border-1 shadow p-3 mb-5 bg-body rounded" style="border-radius: 0;">
                     <div class="card-body">
-                        <h4 class="lead mb-3 fs-4" style="text-align: left; font-weight: bold; margin-top:-15px; margin-left:-10px;">My recent activities</h4>
+                        <h4 class="lead mb-3 fs-4" style="text-align: left; font-weight: bold; margin-top:-15px; margin-left:-10px;">Recent Activities</h4>
                         {% if recents.count %}
                             {% for recent in recents %}
-                                <h5 class="card-text"><span class="fw-bold">{{recent.activity_name}}</span> - <span class="fw-bold">{{recent.activity_xp}}</span>pts - <span class="fw-bold">{{recent.updated_at}}</span></h5>
+                                <h5 class="card-text"><span class="fw-bold text-primary">{{recent.activity_name}}</span> - <span class="fw-bold text-success">{{recent.activity_xp}}</span><span class="fw-bold">pts</span> - <span class="fw-bold">{{recent.updated_at}}</span></h5>
                             {% endfor %}
                         {% endif %}
                     </div>

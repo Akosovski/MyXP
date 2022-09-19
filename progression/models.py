@@ -6,7 +6,6 @@ from django.utils.timezone import now
 class Activity(models.Model):
     activity_name = models.CharField(max_length=255)
     activity_xp = models.IntegerField()
-    activity_date = models.DateField(default=now)
     activity_summary = models.TextField()
     updated_at = models.DateTimeField(auto_now=True)
     owner = models.ForeignKey(to=User, on_delete=models.CASCADE)

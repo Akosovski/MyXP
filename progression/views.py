@@ -11,6 +11,7 @@ from django.template.loader import render_to_string
 @login_required(login_url = '/authentication/login')
 def index(request):
     activities = Activity.objects.all()
+    recents = Activity.objects.order_by('-updated_at')[:3]
 
     total_xp = 0
     for activity in activities:
@@ -31,6 +32,7 @@ def index(request):
         'shown_xp': shown_xp,
         'int_level': int_level,
         'bar_width': bar_width,
+        'recents': recents,
     }
     return render(request, 'progression/index.html', context)
 
@@ -40,7 +42,6 @@ def add_activity(request):
         activity_name = request.POST.get('name')
         activity_xp = request.POST.get('xp')
         activity_summary = request.POST.get('summary')
-        activity_date = request.POST.get('date')
 
         if not activity_name:
             messages.error(request, 'Incorrect name!')
@@ -54,11 +55,7 @@ def add_activity(request):
             messages.error(request, 'Incorrect summary!')
             return render(request, 'progression/index.html')
         
-        if not activity_date:
-            messages.error(request, 'Incorrect date!')
-            return render(request, 'progression/index.html')
-        
-        Activity.objects.create(owner=request.user, activity_name=activity_name, activity_xp=activity_xp, activity_summary=activity_summary, activity_date=activity_date)
+        Activity.objects.create(owner=request.user, activity_name=activity_name, activity_xp=activity_xp, activity_summary=activity_summary)
         messages.success(request, 'Successfully added activity!')
         
         return redirect('progression')

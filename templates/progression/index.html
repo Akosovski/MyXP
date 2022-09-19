@@ -26,7 +26,11 @@
                 <div class="card mx-auto border border-dark border-1 shadow p-3 mb-5 bg-body rounded" style="border-radius: 0;">
                     <div class="card-body">
                         <h4 class="lead mb-3 fs-4" style="text-align: left; font-weight: bold; margin-top:-15px; margin-left:-10px;">My recent activities</h4>
-                        <h5 class="card-text">Quickie - 05.40 PM - 16th December 2014 (Dummy)</h5>
+                        {% if recents.count %}
+                            {% for recent in recents %}
+                                <h5 class="card-text"><span class="fw-bold">{{recent.activity_name}}</span> - <span class="fw-bold">{{recent.activity_xp}}</span>pts - <span class="fw-bold">{{recent.updated_at}}</span></h5>
+                            {% endfor %}
+                        {% endif %}
                     </div>
                 </div>
 
@@ -50,9 +54,7 @@
             <div class="d-grid p-1">
                 <br>
                     <input type="text" class="form-control activityadd rounded" name="summary" value="{{values.activity_summary}}" id="summaryfield" placeholder="Summary?" required>
-                    <input type="date" class="form-control activityadd mt-4 rounded" name="date" value="{{values.activity_date}}" id="datefield" placeholder="Date?" required>
                 <br>
-                <button type="button" class="btn btn-dark btn-lg px-5 w-100 xpadd rounded">Right Now</button>
             </div>
 
             <input type="submit" value="Submit" class="btn btn-success btn-lg px-5 m-1 mt-4 mb-5 w-auto xpadd rounded">

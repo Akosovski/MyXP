@@ -38,7 +38,10 @@
             <div class="d-grid p-1">
                 <br>
                     <p class="text-dark fs-3" style="font-weight: bold">Add a New One!</p>
-                    <input type="text" class="form-control activityadd rounded" name="name" value="{{values.activity_name}}" id="namefield" placeholder="Activity?" required>
+                    <div class="input-group rounded">
+                        <span class="input-group-text">Activity</span>
+                        <input type="text" class="form-control activityadd" name="name" value="{{values.activity_name}}" id="namefield" placeholder="Activity?" required>
+                    </div>
                     <input type="number" class="form-control activityadd mt-4 rounded" name="xp" value="{{values.activity_xp}}" id="pointsfield" placeholder="Points?" required>
             </div>
 

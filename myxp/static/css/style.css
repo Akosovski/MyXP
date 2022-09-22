@@ -13,6 +13,34 @@
     color: white;
 }
 
+.xpadd{
+    transition: all 300ms;
+}
+
+.xpadd:hover{
+    color: black;
+    background-color: lightgreen;
+    border-color: white;
+}
+
+.xpadd:active{
+    color: black;
+    background-color: #1674fd;
+    border-color: #1674fd;
+}
+
+.recently{
+    transition: all 300ms;
+}
+
+.recently:hover{
+    background: #f4f4f4;
+}
+
+.recently:active{
+    background: lightgreen;
+}
+
 #table-container{
     min-width: 800px;
 }

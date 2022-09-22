@@ -24,17 +24,17 @@
         <!-- CONTAINER -->
         <div class="d-flex">
             <div class="col-lg-6 mx-auto">
-                <div class="card mx-auto border border-dark border-1 shadow p-3 mb-5 bg-body rounded" style="border-radius: 0;">
+                <div class="card mx-auto border border-dark border-1 shadow p-2 mb-5 bg-body rounded" style="border-radius: 0;">
                     <div class="card-body">
                         <div class="d-flex justify-content-start">
                             <img src="https://www.svgrepo.com/show/11536/medal.svg" width="32" height="32" class="mt-0">
                             <h3 class="lead mt-0 fs-4" style="text-align: left; font-weight: bold; margin-top:-15px; margin-left:5px;">Recent Activities</h3>
                         </div>
-                        <hr class="mt-4">
+                        <hr class="mt-4 mb-0 ms-3 me-3">
                         {% if recents.count %}
                             {% for recent in recents %}
                                 <a href="{% url 'view-detail' recent.id %}" style="text-decoration: none;">
-                                    <h5 class="card-text fs-5">
+                                    <h5 class="card-text fs-5 p-3 pb-0 recently">
                                         <span class="fw-bold text-primary">{{recent.activity_name}}</span>
                                         <span class="fw-bold text-dark"> - </span>
                                         <span class="fw-bold text-success">{{recent.activity_xp}}</span>

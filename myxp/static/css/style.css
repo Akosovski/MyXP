@@ -1,4 +1,14 @@
+/* Shift + Refresh Button to clear cache */
+
 *{
     font-family: 'Inter', sans-serif;
 }
 
+.input-group{
+    border: 1px solid black;
+}
+
+.input-group-text{
+    background-color: #212529;
+    color: white;
+}

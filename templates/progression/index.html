@@ -40,9 +40,12 @@
                     <p class="text-dark fs-3" style="font-weight: bold">Add a New One!</p>
                     <div class="input-group rounded">
                         <span class="input-group-text">Activity</span>
-                        <input type="text" class="form-control activityadd" name="name" value="{{values.activity_name}}" id="namefield" placeholder="Activity?" required>
+                        <input type="text" class="form-control activityadd" name="name" value="{{values.activity_name}}" id="namefield" placeholder="..." required>
                     </div>
-                    <input type="number" class="form-control activityadd mt-4 rounded" name="xp" value="{{values.activity_xp}}" id="pointsfield" placeholder="Points?" required>
+                    <div class="input-group rounded mt-4">
+                        <span class="input-group-text">Points</span>
+                        <input type="number" class="form-control activityadd" name="xp" value="{{values.activity_xp}}" id="pointsfield" placeholder="..." required>
+                    </div>
             </div>
 
             <!-- Quick XP -->
@@ -56,7 +59,10 @@
             <!-- Summary & Dates -->
             <div class="d-grid p-1 mt-3">
                 <br>
-                    <input type="text" class="form-control activityadd rounded" name="summary" value="{{values.activity_summary}}" id="summaryfield" placeholder="Summary?" required>
+                    <div class="input-group rounded">
+                        <span class="input-group-text">Summary</span>
+                        <input type="text" class="form-control activityadd" name="summary" value="{{values.activity_summary}}" id="summaryfield" placeholder="..." required>
+                    </div>
                 <br>
             </div>
 

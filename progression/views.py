@@ -78,7 +78,16 @@ def activity_list(request):
 
 @login_required(login_url = '/authentication/login')
 def view_detail(request):
+    activities = Activity.objects.get(pk=id)
+
     return render(request, 'progression/view_detail.html')
+
+def delete_activity(request, id):
+    activity = Activity.objects.get(pk=id)
+    activity.delete()
+
+    messages.success(request, 'Activity Deleted.')
+    return redirect('activity-list')
 
 @login_required(login_url = '/authentication/login')
 def profile(request):

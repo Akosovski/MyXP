@@ -27,3 +27,7 @@ function add100() {
     var total = intxp + 100;
     document.forms['add-activity']['xp'].value = total;
 }
+
+function renull() {
+    document.forms['add-activity']['xp'].value = 1-1;
+}

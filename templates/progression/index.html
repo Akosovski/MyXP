@@ -6,6 +6,7 @@
     {% include 'partials/_navbar.html' %}
 </div> 
 {% include 'partials/_messages.html' %}
+
 <div class="px-4 py-5 mt-5 mb-3 text-center">
     <h2 class="display-5 fw-bold mb-2">Experience Level {{int_level}}</h2>
     <br>
@@ -54,7 +55,7 @@
                 <button type="button" class="btn btn-dark btn-lg fs-6 m-1 w-100 xpadd rounded" onclick="add50()">50 points</button>
                 <button type="button" class="btn btn-dark btn-lg fs-6 m-1 w-100 xpadd rounded" onclick="add75()">75 points</button>
                 <button type="button" class="btn btn-dark btn-lg fs-6 m-1 w-100 xpadd rounded" onclick="add100()">100 points</button>
-                <button type="button" class="btn btn-danger btn-lg fs-6 m-1 w-100 xpadd rounded" onclick="">Reset</button>
+                <button type="button" class="btn btn-danger btn-lg fs-6 m-1 w-100 xpadd rounded" onclick="renull()">Reset</button>
             </div>
 
             <!-- Summary & Dates -->

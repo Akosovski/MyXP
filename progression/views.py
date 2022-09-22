@@ -77,10 +77,12 @@ def activity_list(request):
     return render(request, 'progression/activity_list.html', context)
 
 @login_required(login_url = '/authentication/login')
-def view_detail(request):
-    activities = Activity.objects.get(pk=id)
-
-    return render(request, 'progression/view_detail.html')
+def view_detail(request, id):
+    activity = Activity.objects.get(pk=id)
+    context = {
+        'activity': activity
+    }
+    return render(request, 'progression/view_detail.html', context)
 
 def delete_activity(request, id):
     activity = Activity.objects.get(pk=id)

@@ -15,8 +15,9 @@
                 <thead>
                     <tr>
                         <th>Activity</th>
-                        <th>Points</th>
+                        <th>Experience</th>
                         <th>Date</th>
+                        <th></th>
                     </tr>
                 </thead>
                 {% if activities.count %}
@@ -24,8 +25,9 @@
                     {% for activity in page_obj %}
                         <tr class="align-middle">
                             <td>{{activity.activity_name}}</td>
-                            <td>{{activity.activity_xp}}</td>
+                            <td>{{activity.activity_xp}} points</td>
                             <td>{{activity.updated_at}}</td>
+                            <td><a href="{% url 'view-detail' activity.id %}" class="btn btn-dark btn-sm">Details</a></td>
                         </tr>
                     {% endfor %}
                 {% else %}

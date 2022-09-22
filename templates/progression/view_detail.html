@@ -10,6 +10,49 @@
     <h5 class="mt-5" style="text-align: center; font-weight: bold">Activity Details</h5>
 </div>
 
+<div class="list-group w-auto">
+    <div class="list-group-item list-group-item-action d-flex gap-3 py-3">
+        <img src="https://github.com/twbs.png" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">
+        <div class="d-flex gap-2 w-100 justify-content-between">
+            <div>
+                <h6 class="mb-0 fw-boldd">Activity Name</h6>
+                <p class="mb-0 opacity-75">{{activity.activity_name}}</p>
+            </div>
+            <small class="opacity-50 text-nowrap"></small>
+        </div>
+    </div>
+    <div class="list-group-item list-group-item-action d-flex gap-3 py-3">
+        <img src="https://github.com/twbs.png" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">
+        <div class="d-flex gap-2 w-100 justify-content-between">
+            <div>
+                <h6 class="mb-0 fw-boldd">Experience</h6>
+                <p class="mb-0 opacity-75">{{activity.activity_xp}} points</p>
+            </div>
+            <small class="opacity-50 text-nowrap"></small>
+        </div>
+    </div>
+    <div class="list-group-item list-group-item-action d-flex gap-3 py-3">
+        <img src="https://github.com/twbs.png" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">
+        <div class="d-flex gap-2 w-100 justify-content-between">
+            <div>
+                <h6 class="mb-0 fw-boldd">Date</h6>
+                <p class="mb-0 opacity-75">{{activity.updated_at}}</p>
+            </div>
+            <small class="opacity-50 text-nowrap"></small>
+        </div>
+    </div>
+    <div class="list-group-item list-group-item-action d-flex gap-3 py-3">
+        <img src="https://github.com/twbs.png" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">
+        <div class="d-flex gap-2 w-100 justify-content-between">
+            <div>
+                <h6 class="mb-0 fw-boldd">Summary</h6>
+                <p class="mb-0 opacity-75">{{activity.activity_summary}}</p>
+            </div>
+            <small class="opacity-50 text-nowrap"></small>
+        </div>
+    </div>
+</div>
+
 <div class="sticky-container">
     {% include 'partials/_footer.html' %}
 </div> 

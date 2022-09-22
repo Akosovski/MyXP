@@ -90,7 +90,3 @@ def delete_activity(request, id):
 
     messages.success(request, 'Activity Deleted.')
     return redirect('activity-list')
-
-@login_required(login_url = '/authentication/login')
-def profile(request):
-    return render(request, 'progression/profile.html')

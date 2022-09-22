@@ -49,11 +49,12 @@
             </div>
 
             <!-- Quick XP -->
-            <div class="d-sm-flex mt-3 justify-content-md-between d-grid justify-content-sm-center" id="button-group">
-                <button type="button" class="btn btn-dark btn-lg px-5 m-1 xpadd rounded" onclick="add25()">25 points</button>
-                <button type="button" class="btn btn-dark btn-lg px-5 m-1 xpadd rounded" onclick="add50()">50 points</button>
-                <button type="button" class="btn btn-dark btn-lg px-5 m-1 xpadd rounded" onclick="add75()">75 points</button>
-                <button type="button" class="btn btn-dark btn-lg px-5 m-1 xpadd rounded" onclick="add100()">100 points</button>
+            <div class="d-sm-flex mt-3 justify-content-md-center d-grid justify-content-sm-center w-100" id="button-group">
+                <button type="button" class="btn btn-dark btn-lg fs-6 m-1 w-100 xpadd rounded" onclick="add25()">25 points</button>
+                <button type="button" class="btn btn-dark btn-lg fs-6 m-1 w-100 xpadd rounded" onclick="add50()">50 points</button>
+                <button type="button" class="btn btn-dark btn-lg fs-6 m-1 w-100 xpadd rounded" onclick="add75()">75 points</button>
+                <button type="button" class="btn btn-dark btn-lg fs-6 m-1 w-100 xpadd rounded" onclick="add100()">100 points</button>
+                <button type="button" class="btn btn-danger btn-lg fs-6 m-1 w-100 xpadd rounded" onclick="">Reset</button>
             </div>
 
             <!-- Summary & Dates -->
@@ -66,7 +67,10 @@
                 <br>
             </div>
 
-            <input type="submit" value="Submit" class="btn btn-success btn-lg px-5 m-1 mt-4 mb-5 w-auto xpadd rounded">
+            <!-- Submit Button -->
+            <div class="d-grid p-1 mt-3">
+                <input type="submit" value="Submit" class="btn btn-success px-5 w-auto xpadd rounded">
+            </div>
         </div>
     </form>
 </div>

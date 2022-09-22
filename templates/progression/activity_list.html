@@ -6,9 +6,10 @@
     {% include 'partials/_navbar.html' %}
 </div> 
 
-<div class="row pt-5 ps-0 pe-0 m-0">
+
+<div class="row pt-5 ps-0 pe-0 m-0 overflow-auto mh-100">
     <h5 class="mt-5" style="text-align: center; font-weight: bold">Activity List</h5>
-    <div class="container-fluid overflow-auto mt-1 border border-dark border-1 border-end-0 border-start-0">
+    <div class="container-fluid mt-1 border border-dark border-1 border-end-0 border-start-0" id="table-container">
         <div class="app-table mt-2">
             <table class="table table-striped">
                 <thead>
@@ -38,7 +39,7 @@
             </table>
         </div>
     
-        <div class="container d-flex justify-content-end mb-0" id="pagination-container">
+        <div class="container d-flex justify-content-md-end justify-content-sm-center mb-0" id="pagination-container">
             <div class="mt-2 m-3">
                 Page {{page_obj.number}} of {{ page_obj.paginator.num_pages }}
             </div>

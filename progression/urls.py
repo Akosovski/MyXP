@@ -10,6 +10,7 @@ urlpatterns = [
     path('authentication/', include('authentication.urls')),
     path('add-activity', views.add_activity, name="add-activity"),
     path('activity-list', views.activity_list, name="activity-list"),
+    path('view-detail', views.view_detail, name="view-detail"),
     path('profile', views.profile, name="profile"),
     path('close-modal', views.close_modal, name="close-modal"),
 ]

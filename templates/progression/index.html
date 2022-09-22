@@ -7,7 +7,7 @@
 </div> 
 {% include 'partials/_messages.html' %}
 <div class="px-4 py-5 mt-5 mb-3 text-center">
-    <h1 class="display-5 fw-bold mb-2">Experience Level {{int_level}}</h1>
+    <h2 class="display-5 fw-bold mb-2">Experience Level {{int_level}}</h2>
     <br>
     <div class="d-block ms-4 me-4">
         <!-- PROGRESS BAR -->
@@ -25,10 +25,10 @@
             <div class="col-lg-6 mx-auto">
                 <div class="card mx-auto border border-dark border-1 shadow p-3 mb-5 bg-body rounded" style="border-radius: 0;">
                     <div class="card-body">
-                        <h4 class="lead mb-3 fs-4" style="text-align: left; font-weight: bold; margin-top:-15px; margin-left:-10px;">Recent Activities</h4>
+                        <h4 class="lead mb-3 fs-5" style="text-align: left; font-weight: bold; margin-top:-15px; margin-left:-10px;">Recent Activities</h4>
                         {% if recents.count %}
                             {% for recent in recents %}
-                                <h5 class="card-text"><span class="fw-bold text-primary">{{recent.activity_name}}</span> - <span class="fw-bold text-success">{{recent.activity_xp}}</span><span class="fw-bold">pts</span> - <span class="fw-bold">{{recent.updated_at}}</span></h5>
+                                <h5 class="card-text fs-5"><span class="fw-bold text-primary">{{recent.activity_name}}</span> - <span class="fw-bold text-success">{{recent.activity_xp}}</span><span class="fw-bold">pts</span> - <span class="fw-bold">{{recent.updated_at}}</span></h5>
                             {% endfor %}
                         {% endif %}
                     </div>
@@ -37,10 +37,10 @@
             <!-- Form Activity -->
             <div class="d-grid p-1">
                 <br>
-                    <p class="text-dark fs-3" style="font-weight: bold">Add a New One!</p>
+                    <p class="text-dark fs-4" style="font-weight: bold">Add a New One!</p>
                     <div class="input-group rounded">
                         <span class="input-group-text">Activity</span>
-                        <input type="text" class="form-control activityadd" name="name" value="{{values.activity_name}}" id="namefield" placeholder="..." required>
+                        <input type="text" class="form-control activityadd" name="name" value="{{values.activity_name}}" id="namefield" placeholder="Activity?" required>
                     </div>
                     <div class="input-group rounded mt-4">
                         <span class="input-group-text">Points</span>
@@ -62,7 +62,7 @@
                 <br>
                     <div class="input-group rounded">
                         <span class="input-group-text">Summary</span>
-                        <input type="text" class="form-control activityadd" name="summary" value="{{values.activity_summary}}" id="summaryfield" placeholder="..." required>
+                        <input type="text" class="form-control activityadd" name="summary" value="{{values.activity_summary}}" id="summaryfield" placeholder="Summary?" required>
                     </div>
                 <br>
             </div>

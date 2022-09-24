@@ -12,5 +12,6 @@ urlpatterns = [
     path('activity-list', views.activity_list, name="activity-list"),
     path('view-detail/<int:id>', views.view_detail, name="view-detail"),
     path('delete-activity/<int:id>', views.delete_activity, name="delete-activity"),
+    path('search-activity>', views.search_activity, name="search-activity"),
     path('close-modal', views.close_modal, name="close-modal"),
 ]

@@ -77,6 +77,14 @@ def activity_list(request):
     return render(request, 'progression/activity_list.html', context)
 
 @login_required(login_url = '/authentication/login')
+def search_activity(request, id):
+    activities = Activity.objects.all()
+    context = {
+        'activities': activities
+    }
+    return render(request, 'progression/search_activity.html', context)
+
+@login_required(login_url = '/authentication/login')
 def view_detail(request, id):
     activity = Activity.objects.get(pk=id)
     context = {

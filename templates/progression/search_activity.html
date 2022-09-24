@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="sticky-container">
+    {% include 'partials/_navbar.html' %}
+</div> 
+{% include 'partials/_messages.html' %}
+
+<div class="row pt-5 ps-0 pe-0 m-0 overflow-auto mh-100">
+    <h5 class="mt-5" style="text-align: center; font-weight: bold">Search Activity</h5>
+</div>
+
+<div class="sticky-container">
+    {% include 'partials/_footer.html' %}
+</div> 
+<br>
+{% endblock content %}

@@ -8,9 +8,9 @@ def create_superuser(apps, schema_editor):
     superuser.is_active = True
     superuser.is_superuser = True
     superuser.is_staff = True
-    superuser.username = 'admin'
-    superuser.email = 'admin@admin.com'
-    superuser.set_password('admin')
+    superuser.username = 'akosovski'
+    superuser.email = 'akhtacaesar@gmail.com'
+    superuser.set_password('Ussiowabb61')
     superuser.save()
 
 class Migration(migrations.Migration):

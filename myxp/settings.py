@@ -3,6 +3,7 @@
 import os
 from pathlib import Path
 from django.contrib import messages
+import django_heroku
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -69,13 +70,24 @@ WSGI_APPLICATION = 'myxp.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+# DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.postgresql',
+#        'NAME': 'myexperience',
+#        'USER': 'postgres',
+#        'PASSWORD': 'Ussiowabb61',
+#        'HOST': 'localhost',
+#    }
+# }
+
 DATABASES = {
    'default': {
        'ENGINE': 'django.db.backends.postgresql',
-       'NAME': 'myexperience',
-       'USER': 'postgres',
-       'PASSWORD': 'Ussiowabb61',
-       'HOST': 'localhost',
+       'NAME': 'dd8fobbe7fvcdv', #Database Name
+       'USER': 'lcxxhpxhfinaej', #User
+       'PASSWORD': '57c86dea37e1fb22d0c5b3faa753fcd2c8ed8368215289d180c43889673b7b44', #Password
+       'HOST': 'ec2-52-200-5-135.compute-1.amazonaws.com', #Host
+       'PORT': '5432',
    }
 }
 
@@ -113,7 +125,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'myxp/static')]
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
@@ -125,3 +137,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MESSAGE_TAGS = {
     messages.ERROR: 'danger'
 }
+
+django_heroku.settings(locals())

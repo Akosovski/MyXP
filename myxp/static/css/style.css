@@ -43,6 +43,19 @@
 
 #search-bar{
     max-width: 600px;
+    transition: all 300ms;
+}
+
+.search-button{
+    margin: 18px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+@media only screen and (max-width: 575px) {
+    .search-button{
+        margin: 0;
+    }
 }
 
 #table-container{

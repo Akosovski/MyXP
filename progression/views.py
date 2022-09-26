@@ -78,9 +78,13 @@ def activity_list(request):
 
 @login_required(login_url = '/authentication/login')
 def search_activity(request):
-    activities = Activity.objects.all()
+    activities = Activity.objects.order_by('-updated_at')
+    paginator = Paginator(activities, 15)
+    page_number = request.GET.get('page')
+    page_obj = Paginator.get_page(paginator, page_number)
     context = {
-        'activities': activities
+        'activities': activities,
+        'page_obj': page_obj,
     }
     return render(request, 'progression/search_activity.html', context)
 

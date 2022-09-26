@@ -1,2 +1,2 @@
-release: python manage.py migrate.py migrate
+release: python manage.py migrate
 web: gunicorn myxp.wsgi --log-file=-

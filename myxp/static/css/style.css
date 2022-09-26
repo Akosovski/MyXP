@@ -4,6 +4,18 @@
     font-family: 'Inter', sans-serif;
 }
 
+.nav-link{
+    transition: all 300ms;
+}
+
+.nav-link:hover{
+    text-shadow: 0 0 7px #aaaaaa, 0 0 7px #aaaaaa;
+}
+
+.nav-link:active{
+    text-shadow: 0 0 3px #1674fd, 0 0 5px #1674fd;
+}
+
 .input-group{
     border: 1px solid black;
 }

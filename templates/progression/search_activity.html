@@ -11,16 +11,18 @@
     <form name="search-activity" action="{% url 'search-activity' %}" method="POST">
         {% csrf_token %}
         <h5 class="mt-5" style="text-align: center; font-weight: bold">Search Activity</h5>
+        
+
         <!-- Search Bar -->
         <div class="container d-sm-flex justify-content-center d-grid justify-content-sm-center">
             <div class="input-group mt-3 mb-3 rounded" id="search-bar">
                 <label class="input-group-text" for="searchInput" style="background-color: white;"><img src="https://www.svgrepo.com/show/14071/search.svg" width="25" height="25" class="flex-shrink-0"></label>
                 <input type="text" class="form-control activityadd" name="search" id="searchInput" placeholder="Search" required>
             </div>
-            <select class="form-select mb-3 rounded" id="activity-selector">
-                <option selected>Activity</option>
-                <option value="1">Points</option>
-                <option value="2">Date</option>
+            <select class="form-select mb-3 rounded" id="activity-selector" name="selector">
+                <option selected value="activity_name">Activity</option>
+                <option value="activity_xp">Points</option>
+                <option value="updated_at">Date</option>
             </select>
             <input type="submit" value="Search" class="btn btn-dark w-auto xpadd search-button rounded">
         </div>

@@ -66,6 +66,10 @@
     transition: all 300ms;
 }
 
+#activity-selector:hover{
+    cursor: pointer;
+}
+
 .search-button{
     margin: 18px;
     padding-left: 25px;

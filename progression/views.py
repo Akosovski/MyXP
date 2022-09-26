@@ -1,5 +1,6 @@
 from dataclasses import field
 from django.contrib.auth.decorators import login_required
+from django.contrib.postgres.search import SearchVector
 from multiprocessing import context
 from django.shortcuts import render, redirect
 from django.contrib.auth.admin import User
@@ -87,7 +88,8 @@ def search_activity(request):
 
     if request.method == 'POST':
         searcher = request.POST.get('search')
-        activities = Activity.objects.filter(activity_name__icontains=searcher)
+        selector = request.POST.get('selector')
+        activities = Activity.objects.annotate(search=SearchVector(selector)).filter(search=searcher)
         paginator = Paginator(activities, 15)
         page_number = request.GET.get('page')
         page_obj = Paginator.get_page(paginator, page_number)

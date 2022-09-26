@@ -93,6 +93,7 @@ def search_activity(request):
         page_obj = Paginator.get_page(paginator, page_number)
     
         context = {
+            'activities': activities,
             'searcher': searcher,
             'page_obj': page_obj,
         }

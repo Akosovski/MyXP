@@ -28,50 +28,57 @@
 
     <!-- Search Result Table -->
     {% if searcher != '' %}
-    <div class="container-fluid border border-dark border-1 border-end-0 border-start-0" id="table-container" style="display: block">
-        <div class="app-table mt-2">
-            <table class="table table-striped">
-                <thead>
-                    <tr>
-                        <th>Activity</th>
-                        <th>Experience</th>
-                        <th>Date</th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody>
-                {% for activity in page_obj %} 
-                    <tr class="align-middle">
-                        <td>{{activity.activity_name}}</td>
-                        <td>{{activity.activity_xp}} points</td>
-                        <td>{{activity.updated_at}}</td>
-                        <td><a href="{% url 'view-detail' activity.id %}" class="btn btn-dark btn-sm xpadd">Details</a></td>
-                    </tr>
-                {% endfor %}
-            </table>
-        </div>
-    
-        <div class="container d-flex justify-content-md-end justify-content-sm-center mb-0" id="pagination-container">
-            <div class="mt-2 m-3">
-                Page {{page_obj.number}} of {{ page_obj.paginator.num_pages }}
-            </div>
-            <div class="">     
-                <ul class="pagination">
-                    {% if page_obj.has_previous %}
-                    <li {% if page_obj.number == 1 %} class="page-item active" {% endif %}><a class="page-link text-dark" href="?page=1">&laquo; 1</a></li>
-                    <li class="page-item"> <a class="page-link text-dark" href="?page={{ page_obj.previous_page_number }}">Back</a></li>
-                    {% endif %}
+        {% if activities.count %}
+            <div class="container-fluid border border-dark border-1 border-end-0 border-start-0" id="table-container" style="display: block">
+                <div class="app-table mt-2">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Activity</th>
+                                <th>Experience</th>
+                                <th>Date</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for activity in page_obj %} 
+                                <tr class="align-middle">
+                                    <td>{{activity.activity_name}}</td>
+                                    <td>{{activity.activity_xp}} points</td>
+                                    <td>{{activity.updated_at}}</td>
+                                    <td><a href="{% url 'view-detail' activity.id %}" class="btn btn-dark btn-sm xpadd">Details</a></td>
+                                </tr>
+                            {% endfor %}
+                        </table>
+                    </table>
+                </div>
             
-                    {% if page_obj.has_next %}
-                    <li class="page-item"> <a class="page-link text-dark" href="?page={{ page_obj.next_page_number }}">Next</a></li>
-                    <li class="page-item"> <a class="page-link text-dark" href="?page={{ page_obj.paginator.num_pages }}">{{ page_obj.paginator.num_pages}} &raquo;</a></li>
-                    {% endif %}
-                </ul>           
+                <div class="container d-flex justify-content-md-end justify-content-sm-center mb-0" id="pagination-container">
+                    <div class="mt-2 m-3">
+                        Page {{page_obj.number}} of {{ page_obj.paginator.num_pages }}
+                    </div>
+                    <div class="">     
+                        <ul class="pagination">
+                            {% if page_obj.has_previous %}
+                            <li {% if page_obj.number == 1 %} class="page-item active" {% endif %}><a class="page-link text-dark" href="?page=1">&laquo; 1</a></li>
+                            <li class="page-item"> <a class="page-link text-dark" href="?page={{ page_obj.previous_page_number }}">Back</a></li>
+                            {% endif %}
+                    
+                            {% if page_obj.has_next %}
+                            <li class="page-item"> <a class="page-link text-dark" href="?page={{ page_obj.next_page_number }}">Next</a></li>
+                            <li class="page-item"> <a class="page-link text-dark" href="?page={{ page_obj.paginator.num_pages }}">{{ page_obj.paginator.num_pages}} &raquo;</a></li>
+                            {% endif %}
+                        </ul>           
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
+        {% else %}
+            <div id="indicator">
+                <h4 style="margin-left: 1vw;">No Data Match</h4>
+            </div>
+        {% endif %}
     {% else %}
-    <div class="container-fluid border border-dark border-1 border-end-0 border-start-0" id="table-container" style="display: none">
+        <div class="container-fluid border border-dark border-1 border-end-0 border-start-0" id="table-container" style="display: none">
     {% endif %}   
 </div>
 

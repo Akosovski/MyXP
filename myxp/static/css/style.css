@@ -60,6 +60,12 @@
     padding-right: 25px;
 }
 
+#indicator{
+    text-align: center;
+    margin: 20px;
+    width: 97%;
+}
+
 @media only screen and (max-width: 575px) {
     #button-group{
         padding-right: 10px;
@@ -71,6 +77,9 @@
     #activity-selector{
         max-width: 100%;
         margin-top: 0;
+    }
+    #indicator{
+        max-width: 90%;
     }
 }
 

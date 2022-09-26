@@ -82,6 +82,25 @@
     width: 97%;
 }
 
+.search-title{
+    margin-top: 4px;
+    margin-right: 8px;
+}
+
+#info-popover{
+    border: none;
+    padding: 2px;
+    padding-bottom: 1px;
+}
+
+#info-popover:active{
+    background-color: #1674fd;
+}
+
+#popover-image{
+    border: none;
+}
+
 @media only screen and (max-width: 575px) {
     #button-group{
         padding-right: 10px;

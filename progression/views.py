@@ -70,23 +70,33 @@ def activity_list(request):
     page_number = request.GET.get('page')
     page_obj = Paginator.get_page(paginator, page_number)
 
-    context = {
+    context = {  
         'activities': activities,
         'page_obj': page_obj,
     }
     return render(request, 'progression/activity_list.html', context)
 
 @login_required(login_url = '/authentication/login')
-def search_activity(request):        
-    activities = Activity.objects.order_by('-updated_at')
-    paginator = Paginator(activities, 15)
-    page_number = request.GET.get('page')
-    page_obj = Paginator.get_page(paginator, page_number)
-    context = {
-        'activities': activities,
-        'page_obj': page_obj,
-    }
-    return render(request, 'progression/search_activity.html', context)
+def search_activity(request):
+    if request.method == 'GET':
+        searcher = ""
+        context = {
+            'searcher': searcher,
+        }
+        return render(request, 'progression/search_activity.html', context)
+
+    if request.method == 'POST':
+        searcher = request.POST.get('search')
+        activities = Activity.objects.filter(activity_name__icontains=searcher)
+        paginator = Paginator(activities, 15)
+        page_number = request.GET.get('page')
+        page_obj = Paginator.get_page(paginator, page_number)
+    
+        context = {
+            'searcher': searcher,
+            'page_obj': page_obj,
+        }
+        return render(request, 'progression/search_activity.html', context)
 
 @login_required(login_url = '/authentication/login')
 def view_detail(request, id):

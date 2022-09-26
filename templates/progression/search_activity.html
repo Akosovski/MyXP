@@ -22,7 +22,8 @@
     </form>
 
     <!-- Search Result Table -->
-    <div class="container-fluid border border-dark border-1 border-end-0 border-start-0" id="table-container">
+    {% if searcher != '' %}
+    <div class="container-fluid border border-dark border-1 border-end-0 border-start-0" id="table-container" style="display: block">
         <div class="app-table mt-2">
             <table class="table table-striped">
                 <thead>
@@ -33,25 +34,15 @@
                         <th></th>
                     </tr>
                 </thead>
-                {% if activities.count %}
                 <tbody>
-                    {% for activity in page_obj %}
-                        <tr class="align-middle">
-                            <td>{{activity.activity_name}}</td>
-                            <td>{{activity.activity_xp}} points</td>
-                            <td>{{activity.updated_at}}</td>
-                            <td><a href="{% url 'view-detail' activity.id %}" class="btn btn-dark btn-sm">Details</a></td>
-                        </tr>
-                    {% endfor %}
-                {% else %}
+                {% for activity in page_obj %} 
                     <tr class="align-middle">
-                        <td class="text-muted">No Data</td>
-                        <td class="text-muted">No Data</td>
-                        <td class="text-muted">No Data</td>
-                        <td class="text-muted"></td>
+                        <td>{{activity.activity_name}}</td>
+                        <td>{{activity.activity_xp}} points</td>
+                        <td>{{activity.updated_at}}</td>
+                        <td><a href="{% url 'view-detail' activity.id %}" class="btn btn-dark btn-sm xpadd">Details</a></td>
                     </tr>
-                </tbody> 
-                {% endif %}
+                {% endfor %}
             </table>
         </div>
     
@@ -74,6 +65,9 @@
             </div>
         </div>
     </div>
+    {% else %}
+    <div class="container-fluid border border-dark border-1 border-end-0 border-start-0" id="table-container" style="display: none">
+    {% endif %}   
 </div>
 
 

@@ -27,7 +27,7 @@
                             <td>{{activity.activity_name}}</td>
                             <td>{{activity.activity_xp}} points</td>
                             <td>{{activity.updated_at}}</td>
-                            <td><a href="{% url 'view-detail' activity.id %}" class="btn btn-dark btn-sm">Details</a></td>
+                            <td><a href="{% url 'view-detail' activity.id %}" class="btn btn-dark btn-sm xpadd">Details</a></td>
                         </tr>
                     {% endfor %}
                 {% else %}

@@ -19,8 +19,8 @@
 
 .xpadd:hover{
     color: black;
-    background-color: lightgreen;
-    border-color: white;
+    background-color: #cdcdcd;
+    border-color: #cdcdcd;
 }
 
 .xpadd:active{
@@ -34,7 +34,7 @@
 }
 
 .recently:hover{
-    background: #f4f4f4;
+    background: #cdcdcd;
 }
 
 .recently:active{
@@ -53,6 +53,9 @@
 }
 
 @media only screen and (max-width: 575px) {
+    #button-group{
+        padding-right: 10px;
+    }
     .search-button{
         margin: 0;
     }

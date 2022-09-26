@@ -41,6 +41,10 @@
     background: lightgreen;
 }
 
+#search-bar{
+    max-width: 600px;
+}
+
 #table-container{
     min-width: 800px;
 }

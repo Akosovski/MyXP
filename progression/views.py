@@ -78,6 +78,11 @@ def activity_list(request):
 
 @login_required(login_url = '/authentication/login')
 def search_activity(request):
+    if request.method == 'POST':
+        activity_name = request.POST.get('name')
+        activity_xp = request.POST.get('xp')
+        activity_summary = request.POST.get('summary')
+
     activities = Activity.objects.order_by('-updated_at')
     paginator = Paginator(activities, 15)
     page_number = request.GET.get('page')

@@ -8,14 +8,20 @@
 {% include 'partials/_messages.html' %}
 
 <div class="row pt-5 ps-0 pe-0 m-0 overflow-auto mh-100">
-    <h5 class="mt-5" style="text-align: center; font-weight: bold">Search Activity</h5>
-    <!-- Search Bar -->
-    <div class="mb-3 mt-3 rounded">
-        <input type="text" class="form-control activityadd input-group" id="searchInput" placeholder="Search">
-    </div>  
+    <form name="search-activity" action="{% url 'search-activity' %}" method="POST">
+        {% csrf_token %}
+        <h5 class="mt-5" style="text-align: center; font-weight: bold">Search Activity</h5>
+        <!-- Search Bar -->
+        <div class="container d-sm-flex justify-content-center d-grid justify-content-sm-center ">
+            <div class="input-group mt-3 mb-3 rounded" id="search-bar">
+                <label class="input-group-text" for="searchInput" style="background-color: white;"><img src="https://www.svgrepo.com/show/14071/search.svg" width="25" height="25" class="flex-shrink-0"></label>
+                <input type="text" class="form-control activityadd" id="searchInput" placeholder="Search">
+            </div>  
+        </div>
+    </form>
 
     <!-- Search Result Table -->
-    <div class="container-fluid mt-1 border border-dark border-1 border-end-0 border-start-0" id="table-container">
+    <div class="container-fluid border border-dark border-1 border-end-0 border-start-0" id="table-container">
         <div class="app-table mt-2">
             <table class="table table-striped">
                 <thead>

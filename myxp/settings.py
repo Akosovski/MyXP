@@ -83,10 +83,10 @@ WSGI_APPLICATION = 'myxp.wsgi.application'
 DATABASES = {
    'default': {
        'ENGINE': 'django.db.backends.postgresql',
-       'NAME': 'dd8fobbe7fvcdv', #Database Name
-       'USER': 'lcxxhpxhfinaej', #User
-       'PASSWORD': '57c86dea37e1fb22d0c5b3faa753fcd2c8ed8368215289d180c43889673b7b44', #Password
-       'HOST': 'ec2-52-200-5-135.compute-1.amazonaws.com', #Host
+       'NAME': 'dc9tkf3gcevhb1', #Database Name
+       'USER': 'qoltsxlbodfqfx', #User
+       'PASSWORD': 'fc19f0d2bf63bab73bd34c7524ed89ecc7da586c4bec91e9c2ddead6fd18c6b6', #Password
+       'HOST': 'ec2-54-204-241-136.compute-1.amazonaws.com', #Host
        'PORT': '5432',
    }
 }

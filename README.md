@@ -23,5 +23,6 @@
 
 ## Upcoming Features ✨
 
+- Edit Activity
 - Reward System
 - Achievement & Milestones

@@ -1,5 +1,5 @@
 ## MyXP
-**MyXP** is a web application used to record activities to be considered as experience and shown as progress bar style of action history.
+**MyXP** is a web application used to record everyday activities where it will be considered as experience and shown as progress bar style of action history. Users will have experience level which will accumulate and can be leveled up by adding more experience in each activities.
 
 ---
 

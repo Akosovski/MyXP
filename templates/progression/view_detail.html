@@ -54,8 +54,29 @@
 </div>
 
 <div class="mt-4 d-flex justify-content-center">
-    <a href="{% url 'delete-activity' activity.id %}" class="btn btn-md btn-danger w-auto xpadd" style="min-width: 200px;">Delete Activity</a>
+    <button type="button" class="btn btn-md btn-danger w-auto xpadd" data-bs-toggle="modal" data-bs-target="#exampleModal">Delete Activity</button>
+    <!--  -->
 </div>
+
+<!-- Confirmation Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title fw-bold" id="exampleModalLabel">Confirmation</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to delete this activity?
+            </div>
+            <div class="modal-footer">
+                <a href="{% url 'delete-activity' activity.id %}" class="btn btn-danger xpadd confirmation-button">Yes</a>
+                <button type="button" class="btn btn-dark xpadd confirmation-button" data-bs-dismiss="modal">No</button>
+            </div>
+        </div>
+    </div>
+</div>
+  
 
 <div class="sticky-container">
     {% include 'partials/_footer.html' %}

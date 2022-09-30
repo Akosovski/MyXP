@@ -101,6 +101,10 @@
     border: none;
 }
 
+.confirmation-button{
+    width: 30%;
+}
+
 @media only screen and (max-width: 575px) {
     #button-group{
         padding-right: 10px;

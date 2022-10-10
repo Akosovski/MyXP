@@ -23,6 +23,6 @@
 
 ## Upcoming Features ✨
 
-- Edit Activity
-- Reward System
-- Achievement & Milestones
+- Edit Option for Activity
+- Reward System & Completion
+- Major UI/UX Changes

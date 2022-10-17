@@ -23,6 +23,7 @@
 
 ## Upcoming Features ✨
 
-- Edit Option for Activity
-- Reward System & Completion
-- Major UI/UX Changes
+- Edit an activity
+- Timestamp for activity creation
+- Reward system & completion
+- Major UI/UX changes

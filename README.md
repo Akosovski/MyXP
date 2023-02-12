@@ -1,5 +1,5 @@
 ## MyXP
-**MyXP** is a web application used to record everyday activities where it will be considered as experience and shown as progress bar style of action history. Users will have experience level which will accumulate and can be leveled up by adding more experience in each activities.
+**MyXP** is a web application used to record everyday activities where it will be considered as experience and shown as progress bar style of action history. Users will have experience level which will accumulate and can be leveled up by adding more experience in each activities. (Currently Offline)
 
 ---
 
@@ -15,7 +15,6 @@
 </p>
 
 <p align="left">
-  <a href="" target="_blank"> <img src="g" alt="" width="40" height="40"/> </a>
   <a href="https://www.postgresql.org/" target="_blank"> <img src="https://www.svgrepo.com/show/354200/postgresql.svg" alt="postgre" width="40" height="40"/> </a>
 </p>
 

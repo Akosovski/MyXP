@@ -15,7 +15,7 @@
 </p>
 
 <p align="left">
-  <a href="https://heroku.com" target="_blank"> <img src="https://www.vectorlogo.zone/logos/heroku/heroku-icon.svg" alt="heroku" width="40" height="40"/> </a>
+  <a href="" target="_blank"> <img src="g" alt="" width="40" height="40"/> </a>
   <a href="https://www.postgresql.org/" target="_blank"> <img src="https://www.svgrepo.com/show/354200/postgresql.svg" alt="postgre" width="40" height="40"/> </a>
 </p>
 

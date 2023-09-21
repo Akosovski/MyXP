@@ -26,3 +26,5 @@
 - Timestamp for activity creation
 - Reward system & completion
 - Major UI/UX changes
+
+Currently Trying to Redeploy the Project - 21st September 2023

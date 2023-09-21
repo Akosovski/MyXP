@@ -1,9 +1,12 @@
 
+from dotenv import load_dotenv
 
 import os
 from pathlib import Path
 from django.contrib import messages
 import django_heroku
+
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -70,26 +73,15 @@ WSGI_APPLICATION = 'myxp.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-# DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.postgresql',
-#        'NAME': 'myexperience',
-#        'USER': 'postgres',
-#        'PASSWORD': 'Ussiowabb61',
-#        'HOST': 'localhost',
-#    }
-# }
-
-# DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.postgresql',
-#        'NAME': '-', #Database
-#        'USER': '-', #User
-#        'PASSWORD': '-', #Password
-#        'HOST': '-', #Host
-#        'PORT': '5432',
-#    }
-# }
+DATABASES = {
+   'default': {
+       'ENGINE': os.environ.get('DB_ENGINE'),
+       'NAME': os.environ.get('DB_NAME'),
+       'USER': os.environ.get('DB_USER'),
+       'PASSWORD': os.environ.get('DB_PASSWORD'),
+       'HOST': os.environ.get('DB_HOST'),
+   }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators

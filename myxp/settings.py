@@ -69,6 +69,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'myxp.wsgi.application'
 
+CSRF_TRUSTED_ORIGINS=['https://myxp-production.up.railway.app']
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases

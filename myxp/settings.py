@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 import os
 from pathlib import Path
 from django.contrib import messages
-import django_heroku
+import dj_database_url
 
 load_dotenv()
 
@@ -73,14 +73,18 @@ WSGI_APPLICATION = 'myxp.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+# DATABASES = {
+#    'default': {
+#        'ENGINE': os.environ.get('DB_ENGINE'),
+#        'NAME': os.environ.get('DB_NAME'),
+#        'USER': os.environ.get('DB_USER'),
+#        'PASSWORD': os.environ.get('DB_PASSWORD'),
+#        'HOST': os.environ.get('DB_HOST'),
+#    }
+# }
+
 DATABASES = {
-   'default': {
-       'ENGINE': os.environ.get('DB_ENGINE'),
-       'NAME': os.environ.get('DB_NAME'),
-       'USER': os.environ.get('DB_USER'),
-       'PASSWORD': os.environ.get('DB_PASSWORD'),
-       'HOST': os.environ.get('DB_HOST'),
-   }
+    "default": dj_database_url.config(default=os.environ.get('DB_URL'), conn_max_age=1800)
 }
 
 # Password validation
@@ -129,5 +133,3 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MESSAGE_TAGS = {
     messages.ERROR: 'danger'
 }
-
-django_heroku.settings(locals())

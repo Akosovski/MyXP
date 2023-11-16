@@ -45,6 +45,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'myxp.urls'
@@ -74,19 +75,19 @@ CSRF_TRUSTED_ORIGINS=['https://myxp-production.up.railway.app']
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-# DATABASES = {
-#    'default': {
-#        'ENGINE': os.environ.get('DB_ENGINE'),
-#        'NAME': os.environ.get('DB_NAME'),
-#        'USER': os.environ.get('DB_USER'),
-#        'PASSWORD': os.environ.get('DB_PASSWORD'),
-#        'HOST': os.environ.get('DB_HOST'),
-#    }
-# }
-
 DATABASES = {
-    "default": dj_database_url.config(default=os.environ.get('DB_URL'), conn_max_age=1800)
+   'default': {
+       'ENGINE': os.environ.get('DB_ENGINE'),
+       'NAME': os.environ.get('DB_NAME'),
+       'USER': os.environ.get('DB_USER'),
+       'PASSWORD': os.environ.get('DB_PASSWORD'),
+       'HOST': os.environ.get('DB_HOST'),
+   }
 }
+
+# DATABASES = {
+#     "default": dj_database_url.config(default=os.environ.get('DB_URL'), conn_max_age=1800)
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
@@ -123,8 +124,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [BASE_DIR /'static']
-STATIC_ROOT = "https://myxp-production.up.railway.app/static/"
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field

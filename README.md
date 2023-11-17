@@ -1,4 +1,4 @@
-## MyXP (Currently Offline)
+## MyXP
 **MyXP** is a web application used to record everyday activities where it will be considered as experience and shown as progress bar style of action history. Users will have experience level which will accumulate and can be leveled up by adding more experience in each activity.
 
 ---
@@ -27,4 +27,4 @@
 - Reward system & completion
 - Major UI/UX changes
 
-Currently Trying to Redeploy the Project - 21st September 2023
+Project Redeployed - 16th November 2023

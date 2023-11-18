@@ -22,8 +22,11 @@ class LoginView(View):
             if user:
                 if user.is_active:
                     auth.login(request, user)
+                    messages.success(request, str(user) + ' successfully logged in!')
                     return redirect('progression')
+            messages.error(request, 'No matching credentials!')
             return render(request, 'authentication/login.html')
+        messages.error(request, 'No matching credentials!')
         return render(request, 'authentication/login.html')
 
 class LogoutView(View):

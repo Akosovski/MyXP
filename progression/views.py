@@ -61,9 +61,6 @@ def add_activity(request):
         
         return redirect('progression')
 
-def close_modal(request):
-    return redirect('progression')
-
 @login_required(login_url = '/authentication/login')
 def activity_list(request):
     activities = Activity.objects.order_by('-updated_at')
@@ -113,5 +110,5 @@ def delete_activity(request, id):
     activity = Activity.objects.get(pk=id)
     activity.delete()
 
-    messages.success(request, 'Activity Deleted.')
+    messages.success(request, 'Activity deleted.')
     return redirect('activity-list')

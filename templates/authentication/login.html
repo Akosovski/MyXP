@@ -4,11 +4,12 @@
 
 <div class="container">
   <div class="position-absolute top-50 start-50 translate-middle p-4 pt-4" style="min-width: 22rem; max-width: 28rem; max-height: 36rem;">
-      <form action="{% url 'login' %}" method="post">
-      <div class="row"> 
-            <div class="text-center">
-                <img class="align-center" src="https://cdn.discordapp.com/attachments/995173807750926346/1011911271010013184/XP_logo_white.png" style="max-width: 120px;">
-            </div>
+        <form action="{% url 'login' %}" method="post">
+            <div class="row"> 
+                <div class="text-center mb-0">
+                    <img class="align-center" src="https://cdn.discordapp.com/attachments/995173807750926346/1011911271010013184/XP_logo_white.png" style="max-width: 120px;">
+                </div>
+                {% include 'partials/_messages.html' %}  
                 {% csrf_token %}
                 <div class="form-group mt-2">
                     <label for="exampleFormControlInput1" class="form-label">Username</label>

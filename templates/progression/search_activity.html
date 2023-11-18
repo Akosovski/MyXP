@@ -5,9 +5,10 @@
 <div class="sticky-container">
     {% include 'partials/_navbar.html' %}
 </div> 
-{% include 'partials/_messages.html' %}
 
 <div class="row pt-5 ps-0 pe-0 m-0 overflow-auto mh-100">
+    <br class="mb-2">
+    {% include 'partials/_messages.html' %}
     <form name="search-activity" action="{% url 'search-activity' %}" method="POST">
         {% csrf_token %}
         <div class="d-flex justify-content-center mt-5">

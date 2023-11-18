@@ -16,7 +16,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-lo%$(3pf#awg14)x2h_!3x4z#l%%djgwgrpwv))lh-3c9r3)e0'
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -75,6 +75,7 @@ CSRF_TRUSTED_ORIGINS=['https://myxp-production.up.railway.app']
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+# Database for development environment only
 # DATABASES = {
 #    'default': {
 #        'ENGINE': os.environ.get('DB_ENGINE'),
@@ -85,6 +86,7 @@ CSRF_TRUSTED_ORIGINS=['https://myxp-production.up.railway.app']
 #    }
 # }
 
+# Database for production environment
 DATABASES = {
     "default": dj_database_url.config(default=os.environ.get('DB_URL'), conn_max_age=1800)
 }

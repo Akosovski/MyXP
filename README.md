@@ -23,8 +23,8 @@
 ## Upcoming Features ✨
 
 - Edit an activity
-- Timestamp for activity creation
-- Reward system & completion
-- Major UI/UX changes
+- Timestamp for activity creation & updates
+- Categories for each activity types
+- Major UI/UX reworks
 
 Project Redeployed - 16th November 2023

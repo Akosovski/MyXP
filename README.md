@@ -22,6 +22,7 @@
 
 ## Upcoming Features ✨
 
+- Change summary to Text Field
 - Edit an activity
 - Timestamp for activity creation & updates
 - Categories for each activity types

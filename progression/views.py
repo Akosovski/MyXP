@@ -11,13 +11,13 @@ from django.template.loader import render_to_string
 
 @login_required(login_url = '/authentication/login')
 def index(request):
-    activities = Activity.objects.all()
-    recents = Activity.objects.order_by('-updated_at')[:3]
+    activities = Activity.objects.filter(owner=request.user)
+    recents = activities.order_by('-updated_at')[:3]
 
     total_xp = 0
     for activity in activities:
         total_xp += activity.activity_xp
-    
+
     if total_xp < 1000:
         shown_xp = total_xp
     else:
@@ -63,12 +63,12 @@ def add_activity(request):
 
 @login_required(login_url = '/authentication/login')
 def activity_list(request):
-    activities = Activity.objects.order_by('-updated_at')
+    activities = Activity.objects.filter(owner=request.user).order_by('-updated_at')
     paginator = Paginator(activities, 15)
     page_number = request.GET.get('page')
     page_obj = Paginator.get_page(paginator, page_number)
 
-    context = {  
+    context = {
         'activities': activities,
         'page_obj': page_obj,
     }
@@ -86,7 +86,7 @@ def search_activity(request):
     if request.method == 'POST':
         searcher = request.POST.get('search')
         selector = request.POST.get('selector')
-        activities = Activity.objects.annotate(search=SearchVector(selector)).filter(search=searcher)
+        activities = Activity.objects.filter(owner=request.user).annotate(search=SearchVector(selector)).filter(search=searcher)
         paginator = Paginator(activities, 15)
         page_number = request.GET.get('page')
         page_obj = Paginator.get_page(paginator, page_number)
@@ -100,14 +100,14 @@ def search_activity(request):
 
 @login_required(login_url = '/authentication/login')
 def view_detail(request, id):
-    activity = Activity.objects.get(pk=id)
+    activity = Activity.objects.get(pk=id, owner=request.user)
     context = {
         'activity': activity
     }
     return render(request, 'progression/view_detail.html', context)
 
 def delete_activity(request, id):
-    activity = Activity.objects.get(pk=id)
+    activity = Activity.objects.get(pk=id, owner=request.user)
     activity.delete()
 
     messages.success(request, 'Activity deleted.')
